@@ -5,177 +5,585 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joslyn's Favorite Christmas Songs!</title>
     <link href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/songs.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
-<header>
-    <h1>Joslyn's Christmas Webpage</h1>
-    <div class="button_list">
-        <button class="page_buttons" onclick="location.href='home.html'">Go to Home Page</button>
-        <button class="page_buttons" onclick="location.href='songs.html'">Go to Song Page</button>
-        <button class="page_buttons" onclick="location.href='christmas_list.html'">Go to Christmas List Page</button>
-    </div>
-</header>
 <body>
+    <header>
+        <h1>Joslyn's Christmas Songs</h1>
+        <div class="button_list">
+            <button class="page_buttons" onclick="location.href='home.html'">Go to Home Page</button>
+            <button class="page_buttons" onclick="location.href='songs.html'">Go to Song Page</button>
+            <button class="page_buttons" onclick="location.href='christmas_list.html'">Go to Christmas List Page</button>
+        </div>
+    </header>
     <section>
+        <div class="song-tabs">
+            <button class="active" onclick="setActiveTab(this); showAllSongs()">All Songs</button>
+            <button onclick="setActiveTab(this); showClassic()">Classic Songs</button>
+            <button onclick="setActiveTab(this); showCovers()">Covers</button>
+        </div>
         <div class="song-grid">
-            <div class = "cover christmas">
-                <img src="../images/album_covers/all_i_want_for_christmas.png" width="400" alt="album cover for All 
-                I want for Christmas.">
-                <h3>All I Want For Christmas</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Mariah Carey</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1994</dd>
-                    <dt>Type:</dt>
-                    <dd>Cover</dd>
-                </dl>
+            <div class="song-card-cover">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/all_i_want_for_christmas.png"
+                            alt="album cover for All I Want for Christmas by Mariah Carey.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">All I Want For Christmas</div>
+                        <div class="singer">Mariah Carey</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/All_I_Want_For_Christmas.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "cover christmas">
-                <img src="../images/album_covers/jingle_bell_rock_glee.png" width="400" alt="album cover for Jingle 
-                Bell Rock - Glee Version.">
-                <h3>Jingle Bell Rock</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Glee Cast</dd>
-                    <dt>Release Year:</dt>
-                    <dd>2012</dd>
-                    <dt>Type:</dt>
-                    <dd>Cover</dd>
-                </dl>
+            <div class="song-card-cover">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/jingle_bell_rock_glee.png"
+                            alt="album cover for Jingle Bell Rock by Glee Cast.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Jingle Bell Rock</div>
+                        <div class="singer">Glee Cast</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Jingle_Bell_Rock_Glee.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/jingle_bell_rock.png" width="400" alt="album cover for Jingle 
-                Bell Rock.">
-                <h3>Jingle Bell Rock</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Bobby Helms</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1957</dd>
-                    <dt>Type:</dt>
-                    <dd>Original</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/jingle_bell_rock.png"
+                            alt="album cover for Jingle Bell Rock by Glee Cast.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Jingle Bell Rock</div>
+                        <div class="singer">Bobby Helms</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Jingle_Bell_Rock_Bobby_Helms.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "cover christmas">
-                <img src="../images/album_covers/last_christmas_ariana_grande.png" width="400" alt="album cover for Last Christmas 
-                - Ariana Grande.">
-                <h3>Last Christmas</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Ariana Grande</dd>
-                    <dt>Release Year:</dt>
-                    <dd>2013</dd>
-                    <dt>Type:</dt>
-                    <dd>Cover</dd>
-                </dl>
+            <div class="song-card-cover">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/last_christmas_ariana_grande.png"
+                            alt="album cover for Last Christmas - Ariana Grande.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Last Christmas</div>
+                        <div class="singer">Ariana Grande</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Last_Christmas_Ariana_Grande.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/last_christmas_wham.png" width="400" alt="album cover for Last 
-                Christmas - Wham!.">
-                <h3>Last Christmas</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Wham!</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1984</dd>
-                    <dt>Type:</dt>
-                    <dd>Original</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/last_christmas_wham.png"
+                            alt="album cover for Last Christmas - Wham!.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Last Christmas</div>
+                        <div class="singer">Wham!</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Last_Christmas_Wham.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/let_it_snow.png" width="400" alt="album cover for Let 
-                It Snow.">
-                <h3>Let It Snow</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Dean Martin</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1959</dd>
-                    <dt>Type:</dt>
-                    <dd>Original</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/let_it_snow.png"
+                            alt="album cover for Let It Snow!">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Let It Snow! Let It Snow! Let it Snow!</div>
+                        <div class="singer">Dean Martin</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Let_It_Snow_Dean_Martin.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/ most_wonderful_time_of_year.png" width="400" alt="album cover for It's 
-                the Most Wonderful Time of The Year.">
-                <h3>It's The Most Wonderful Time of The Year</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Andy Williams</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1963</dd>
-                    <dt>Type:</dt>
-                    <dd>Original</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/most_wonderful_time_of_year.png"
+                            alt="album cover for It's The Most Wonderful Time of Year.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">It's The Most Wonderful Time of Year</div>
+                        <div class="singer">Andy Williams</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Its_The_Most_Wonderful_Time_Of_Year.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/rockin_around_the_christmas_tree.png" width="400" alt="album cover for Rockin'  
-                Around the Christmas Tree.">
-                <h3>Rockin' Around The Christmas Tree</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Brenda Lee</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1958</dd>
-                    <dt>Type:</dt>
-                    <dd>Original</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/rockin_around_the_christmas_tree.png"
+                            alt="album cover for Rockin' Around the Christmas Tree.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Rockin' Around The Christmas Tree</div>
+                        <div class="singer">Brenda Lee</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Rockin_Around_The_Christmas_Tree_Brenda_Lee.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "cover christmas">
-                <img src="../images/album_covers/santa_coming_to_town.png" width="400" alt="album cover 
-                for Santa Claus Is Coming to Town.">
-                <h3>Santa Claus Is Coming To Town</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Justin Bieber</dd>
-                    <dt>Release Year:</dt>
-                    <dd>2011</dd>
-                    <dt>Type:</dt>
-                    <dd>Cover</dd>
-                </dl>
+            <div class="song-card-cover">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/santa_coming_to_town_justin_bieber.png"
+                            alt="album cover for Santa Claus is Coming to Town - Justin Bieber">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">Santa Claus Is Coming to Town</div>
+                        <div class="singer">Justin Bieber</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/Santa_Claus_Is_Coming_To_Town_JB.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/the_christmas_song.png" width="400" alt="album cover 
-                for The Christmas Song.">
-                <h3>The Christmas Song</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Nat King Cole</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1961</dd>
-                    <dt>Type:</dt>
-                    <dd>Classic</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/the_christmas_song.png"
+                            alt="album cover for The Christmas Song.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">The Christmas Song</div>
+                        <div class="singer">Nat King Cole</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/The_Christmas_Song.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "cover christmas">
-                <img src="../images/album_covers/white_christmas_micheal_buble.png" width="400" alt="album cover 
-                for White Christmas - Micheal Buble.">
-                <h3>White Christmas</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Micheal Buble</dd>
-                    <dt>Release Year:</dt>
-                    <dd>2003</dd>
-                    <dt>Type:</dt>
-                    <dd>Cover</dd>
-                </dl>
+            <div class="song-card-cover">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/white_christmas_micheal_buble.png"
+                            alt="album cover for White Christmas - Micheal Buble">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">White Christmas</div>
+                        <div class="singer">Micheal Buble</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/White_Christmas_Buble.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div class = "classic christmas">
-                <img src="../images/album_covers/white_christmas.png" width="400" alt="album cover 
-                for White Christmas.">
-                <h3>White Christmas</h3>
-                <dl>
-                    <dt>Artist Name:</dt>
-                    <dd>Bing Crosby</dd>
-                    <dt>Release Year:</dt>
-                    <dd>1942</dd>
-                    <dt>Type:</dt>
-                    <dd>Orignal</dd>
-                </dl>
+            <div class="song-card-classic">
+                <div class="player">
+                    <div class="cover">
+                        <img src="images/album_covers/white_christmas.png"
+                            alt="album cover for White Christmas - Bing Crosby.">
+                    </div>
+
+                    <div class="info">
+                        <div class="title">White Christmas</div>
+                        <div class="singer">Bing Crosby</div>
+                    </div>
+
+                    <div class="volume-box">
+                        <span class="volume-down">
+                            <i class="material-icons">remove</i>
+                        </span>
+
+                        <input type="range" class="volume-range" step="1" value="80" min="0" max="100" aria-label="Volume">
+
+                        <span class="volume-up">
+                            <i class="material-icons">add</i>
+                        </span>
+                    </div>
+
+                    <div class="btn-box">
+                        <i class="material-icons repeat">repeat</i>
+                        <i class="material-icons favorite active">favorite</i>
+                        <i class="material-icons volume">volume_up</i>
+                    </div>
+
+                    <div class="music-box">
+                        <input type="range" step="1" class="seekbar" value="0" min="0" max="100" aria-label="Song progress">
+
+                        <audio class="music-element">
+                            <source src="audio/White_Christmas.mp3" type="audio/mp3">
+                        </audio>
+
+                        <span class="current-time">0:0</span>
+                        <span class="duration">0:0</span>
+
+                        <span class="play">
+                            <i class="material-icons">play_arrow</i>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
+        <footer>Joslyn Vince 2025</footer>
     </section>
-    
+<script src="js/snowfall.js"></script>
+<script src="js/songs.js"></script>
+<script src ="js/hide_songs.js"></script>
 </body>
 </html>
+

@@ -6,65 +6,101 @@
     <title>Joslyn's Christmas Webpage</title>
     <link href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home_page.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
 </head>
-<header>
-    <h1>Joslyn's Christmas Webpage</h1>
-    <div class="button_list">
-        <button class="page_buttons" onclick="location.href='home.html'">Go to Home Page</button>
-        <button class="page_buttons" onclick="location.href='songs.html'">Go to Song Page</button>
-        <button class="page_buttons" onclick="location.href='christmas_list.html'">Go to Christmas List Page</button>
-    </div>
-</header>
 <body>
+    <header>
+        <h1>Joslyn's Christmas Webpage</h1>
+        <div class="button_list">
+            <button class="page_buttons" onclick="location.href='home.html'">Go to Home Page</button>
+            <button class="page_buttons" onclick="location.href='songs.html'">Go to Song Page</button>
+            <button class="page_buttons" onclick="location.href='christmas_list.html'">Go to Christmas List Page</button>
+        </div>
+    </header>
     <div class ="grid">
         <div>
-            <img src = "../images/home_page/vince_joslyn.png" alt="Girl getting a professional photo
-                with a blue blazer." width = 30%> 
+            <img src = "images/home_page/vince_joslyn.png" alt="Girl getting a professional photo
+                with a blue blazer."> 
         </div>
-        <div>
-            <h1>Joslyn's Christmas Themed Webpage</h1>
+        <div class ="text-box">
+            <h2>About Me</h2>
+            <p>Hi! I am Joslyn Vince. I am a Junior in the School of Information.
+                I made this webpage to show off some of my favorite Christmas Songs
+                through this webpage. Hope you enjoy!
+            </p>
+            <p> 
+                Below I will show some of my favorite pictures of my family and I 
+                during the holidays. Growing up, my family loved Christmas and we always
+                celebrated with all of my extended family.
+            </p>
+            <p>
+                On Christmas Eve, we would stay at my house, and my mother's side of 
+                the family would come over. On Christmas Day, we would travel to Canada
+                to celebrate with my dads side of the family!
+            </p> 
         </div>
     </div>
 </body>
 <main>
     <section>
-    <h2>About Me</h2>
-    <p>Hi! I am Joslyn Vince. I am a Junior in the School of Information.
-        I made this webpage to show off some of my favorite Christmas Songs
-        through this webpage. Hope you enjoy!
-    </p>
-    <p> 
-        Below I will show some of my favorite pictures of my family and I 
-        during the holidays. Growing up, my family loved Christmas and we always
-        celebrated with all of my extended family.
-    </p>
-    <p>
-        On Christmas Eve, we would stay at my house, and my mother's side of 
-        the family would come over. On Christmas Day, we would travel to Canada
-        to celebrate with my dads side of the family!
-    </p> 
-    </section>
-    <section>
-        <div class="grid">
+        <div class="grid-imgs">
+            <h2>Christmas Family Photos!</h2>
             <div>
-                <div>
-                    <img src = "../images/home_page/family_christmas_photo.png" alt="Family Christmas Selfie with
-                    extended family." width = 30%> 
-                    <h3>Christmas 2018</h3>
+
+                <div class="flip-card-with-label">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="images/home_page/family_christmas_photo.png" 
+                                alt ="Family Christmas Selfie">
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Christmas 2018</h3>
+                                <p>This was our family Christmas Selfie from 
+                                    2018. We spent Christmas at my house!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="flip-label">Christmas 2018</p>
                 </div>
-                <div>
-                    <img src = "../images/home_page/santa_dad.png" alt="Father dressed up like Santa with a small dog"
-                    width = 30%> 
-                    <h3>Christmas 2020</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/home_page/santa_dad.png" 
+                                alt="Father dressed up like Santa with a small dog">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Christmas 2020</h3>
+                            <p>This is a photo of my dad dress up as Santa to
+                                 suprise our neighbors on Chrismtas Eve!</p>
+                        </div>
+                    </div>
+                    <p class="flip-label">Christmas 2020</p>
                 </div>
-                <div>
-                    <img src = "../images/home_page/family_pic.png" alt="Family photo of a Mom, Dad, and 
-                    Two Daughters infront of a large Christmas Tree." width = 30%> 
-                    <h3>Christmas 2022</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="images/home_page/family_pic.png" 
+                                alt="Family photo in front of a Christmas tree">
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Christmas 2022</h3>
+                            <p>This is a photo of my family in front of the New
+                                 York City Christmas tree in 2022. We went to
+                                  go meet some friends in NYC for
+                                   a weekend trip. </p>
+                        </div>
+                    </div>
+                     <p class="flip-label">Christmas 2022</p>
                 </div>
             </div>
         </div>
     </section>
 </main>
+<script src="js/snowfall.js"></script>
 <footer>Joslyn Vince 2025</footer>
 </html>

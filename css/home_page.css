@@ -1,0 +1,109 @@
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid img {
+    width: 300px;
+    max-width: 35vw;
+    height: auto;
+    border-radius: 50%;
+    border: double 10px #add8e6;
+}
+
+.grid div {
+    flex: 0 0 auto;
+}
+
+body {
+    color: white;
+}
+
+.text-box {
+    min-width: 420px; 
+    line-height: 1.5;
+}
+
+.grid-imgs h2 {
+    color: white;
+    font-size: xx-large;
+    justify-self: center;
+    padding-top: 30px;
+}
+
+/* FLIP CARDS */
+
+.grid-imgs > div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flip-card-back {
+    background-color: #add8e6;
+    color: #1F2766;
+    transform: rotateY(180deg);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-label {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px;
+}
+
+.flip-card-back h3 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: dashed;
+}
+
+.flip-card-back p {
+    text-align: center;
+    font-size: medium;
+}

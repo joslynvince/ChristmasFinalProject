@@ -1,0 +1,23 @@
+@media (prefers-reduced-motion: reduce) {
+
+    .snowflake {
+        animation: none;
+        display: none;
+    }
+
+    .page_buttons::before {
+        transition: none;
+        transform: none;
+        content: none;
+    }
+
+    .page_buttons:hover {
+        color: white;
+        background: transparent;
+    }
+
+    .row a:nth-child(even) img:hover,
+    .row a:nth-child(odd) img:hover {
+        transform: none;
+  }
+}

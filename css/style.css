@@ -1,11 +1,32 @@
-* {
+body {
     background-color: #1F2766;
+    margin: 0;
+    padding:0;
+    overflow: scroll;
+}
+
+@keyframes fall {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(110vh); }
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+.snowflake {
+    position: fixed; 
+    top: -10px;
+    animation: fall linear infinite;
+    pointer-events: none;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 header h1{
@@ -17,38 +38,44 @@ header h1{
 }
 
 .page_buttons {
- display: inline-block;
- padding: 0.9rem 1.8rem;
- font-size: 16px;
- font-weight: 700;
- color: white;
- border: 3px solid #add8e6;
- cursor: pointer;
- position: relative;
- background-color: transparent;
- text-decoration: none;
- overflow: hidden;
- z-index: 1;
- font-family: inherit;
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    border: 3px solid #add8e6;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
 }
 
 .page_buttons::before {
- content: "";
- position: absolute;
- left: 0;
- top: 0;
- width: 100%;
- height: 100%;
- background-color: #add8e6;
- transform: translateX(-100%);
- transition: all .3s;
- z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #add8e6;
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
 }
 
 .page_buttons:hover::before {
- transform: translateX(0);
+    transform: translateX(0);
 }
 
 .page_buttons:hover {
     color: black;
+}
+
+footer {
+    justify-self: end;
+    padding-right: 3px;
+    color: white;
 }
